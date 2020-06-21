@@ -1,7 +1,7 @@
-import Character from './src/models/Character.ts';
+import CharacterService from './src/services/CharacterService.ts';
 
-const characterModel = new Character('characters');
+const characterService = new CharacterService();
 
-const inserted = await characterModel.insertOne({ nickname: 'Test' });
+const inserted = await characterService.addNew('Test');
 
 console.log(inserted);
