@@ -1,4 +1,4 @@
-import Character from "../models/Character.ts";
+import Character from "../models/Character.model.ts";
 import { IEntity } from "../interfaces/IEntity.ts";
 
 export default class CharacterService {
@@ -6,11 +6,6 @@ export default class CharacterService {
 
   constructor() {
     this.model = new Character('characters');
-  }
-
-  addNew(nickname: string): Promise<IEntity> {
-    // TODO: add unique check
-    return this.model.insertOne({ nickname });
   }
 
 }

@@ -2,6 +2,7 @@ import { Collection } from "https://deno.land/x/mongo@v0.8.0/mod.ts";
 import database from '../database.ts';
 import { IModel } from "../interfaces/IModel.ts";
 import { IEntity } from "../interfaces/IEntity.ts";
+import { ICharacter } from "../interfaces/ICharacter.ts";
 
 class Character implements IModel<ICharacter> {
   private collection: Collection;
@@ -28,10 +29,6 @@ class Character implements IModel<ICharacter> {
   public async findAll(): Promise<ICharacter[]> {
     return this.collection.find();
   }
-}
-
-export interface ICharacter extends IEntity {
-  nickname: string;
 }
 
 export default Character;
